@@ -6,6 +6,8 @@ Este proyecto es una aplicación web que muestra una lista de productos consumie
 
 ![Vista previa de la aplicación](./public/preview.png)
 
+![Vista detallada de productos y estadísticas](./public/preview2.png)
+
 ### Tecnologías Utilizadas
 
 - [React](https://reactjs.org/) - Biblioteca de JavaScript para construir interfaces de usuario
