@@ -17,19 +17,19 @@ Este proyecto es una aplicación web que muestra una lista de productos consumie
 
 ## Instalación
 
-1. Clona este repositorio o descárgalo:
+Clona este repositorio o descárgalo:
 ```bash
-git clone <url-del-repositorio>
+git clone <https://github.com/Marioarce95/PI_Evidencias_2025.git>
 ```
 
 ## Navega al directorio del proyecto:
-### 2. Navegar al Directorio
 
 ```bash
 cd PI_Evidencias_2025
 ```
 
  ## Instala las dependencias:
+
 ```bash
 npm install
 ```
