@@ -4,6 +4,8 @@
 
 Este proyecto es una aplicación web que muestra una lista de productos consumiendo la API de DummyJSON. Está construido con React, Vite, Tailwind CSS y Axios.
 
+![Vista previa de la aplicación](./public/preview.png)
+
 ### Tecnologías Utilizadas
 
 - [React](https://reactjs.org/) - Biblioteca de JavaScript para construir interfaces de usuario
