@@ -132,7 +132,7 @@ El proyecto se ha dividido en los siguientes componentes principales:
 - Manejo de errores mejorado
 - Feedback visual constante
 
-## Mejoras de Diseño en relación a evidencias anteriores
+## Caracteristicas del diseño
 
 - Implementación de Tailwind CSS para diseño responsive
 - Animaciones suaves en hover y transiciones
