@@ -19,14 +19,26 @@ function App() {
   const [error, setError] = useState(null)
   const [cargando, setCargando] = useState(true)
   const [isDarkMode, setIsDarkMode] = useState(() => {
-    // Verificar si hay una preferencia guardada
-    const savedTheme = localStorage.getItem('theme')
-    if (savedTheme) {
-      return savedTheme === 'dark'
+    if (typeof window !== 'undefined') {
+      const savedTheme = localStorage.getItem('theme')
+      if (savedTheme) {
+        return savedTheme === 'dark'
+      }
+      return window.matchMedia('(prefers-color-scheme: dark)').matches
     }
-    // Si no hay preferencia guardada, usar la preferencia del sistema
-    return window.matchMedia('(prefers-color-scheme: dark)').matches
+    return false
   })
+
+  useEffect(() => {
+    const root = window.document.documentElement
+    if (isDarkMode) {
+      root.classList.add('dark')
+      localStorage.setItem('theme', 'dark')
+    } else {
+      root.classList.remove('dark')
+      localStorage.setItem('theme', 'light')
+    }
+  }, [isDarkMode])
 
   useEffect(() => {
     const obtenerProductos = async () => {
@@ -44,17 +56,6 @@ function App() {
 
     obtenerProductos()
   }, [])
-
-  // Efecto para manejar el modo oscuro
-  useEffect(() => {
-    if (isDarkMode) {
-      document.documentElement.classList.add('dark')
-      localStorage.setItem('theme', 'dark')
-    } else {
-      document.documentElement.classList.remove('dark')
-      localStorage.setItem('theme', 'light')
-    }
-  }, [isDarkMode])
 
   // Obtener categorías únicas
   const categorias = [...new Set(productos.map(p => p.category))]
@@ -79,24 +80,29 @@ function App() {
   })
 
   const toggleTheme = () => {
-    setIsDarkMode(prevMode => !prevMode)
+    console.log('Toggle theme llamado, estado actual:', isDarkMode ? 'dark' : 'light')
+    setIsDarkMode(prevMode => {
+      const newMode = !prevMode
+      console.log('Nuevo estado del tema:', newMode ? 'dark' : 'light')
+      return newMode
+    })
     toast.info(`Modo ${!isDarkMode ? 'oscuro' : 'claro'} activado`)
   }
 
   if (cargando) return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 dark:bg-gray-900">
+    <div className="min-h-screen flex items-center justify-center bg-gray-100 dark:bg-gray-900 transition-colors duration-300">
       <div className="text-xl text-gray-800 dark:text-white">Cargando...</div>
     </div>
   )
   
   if (error) return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 dark:bg-gray-900">
+    <div className="min-h-screen flex items-center justify-center bg-gray-100 dark:bg-gray-900 transition-colors duration-300">
       <div className="text-red-600 dark:text-red-400">{error}</div>
     </div>
   )
 
   return (
-    <div className="min-h-screen bg-gray-100 dark:bg-gray-900 p-8">
+    <div className="min-h-screen bg-gray-100 dark:bg-gray-900 p-8 transition-colors duration-300">
       <ToastContainer
         position="top-right"
         autoClose={3000}
@@ -112,7 +118,7 @@ function App() {
       
       <ThemeToggle isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
       
-      <h1 className="text-4xl font-bold text-center text-gray-800 dark:text-white mb-8">
+      <h1 className="text-4xl font-bold text-center text-gray-800 dark:text-white mb-8 transition-colors duration-300">
         Lista de Productos
       </h1>
       

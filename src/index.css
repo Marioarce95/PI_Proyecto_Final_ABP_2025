@@ -2,22 +2,97 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  :root {
-    @apply bg-gray-100 text-gray-900;
-  }
-
-  .dark {
-    @apply bg-gray-900 text-white;
-  }
-
-  body {
-    @apply transition-colors duration-200;
-  }
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f3f4f6;
+  --text-primary: #111827;
+  --text-secondary: #4b5563;
+  --border-color: #e5e7eb;
 }
 
-@layer components {
-  .animate-fade-in {
-    @apply transition-opacity duration-300 ease-in-out;
-  }
+.dark {
+  --bg-primary: #111827;
+  --bg-secondary: #1f2937;
+  --text-primary: #ffffff;
+  --text-secondary: #d1d5db;
+  --border-color: #374151;
+}
+
+/* Estilos base */
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Transiciones suaves */
+* {
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Clases de utilidad para modo oscuro */
+.dark .bg-white {
+  background-color: var(--bg-secondary);
+}
+
+.dark .bg-gray-50 {
+  background-color: var(--bg-secondary);
+}
+
+.dark .bg-gray-100 {
+  background-color: var(--bg-primary);
+}
+
+.dark .text-gray-900 {
+  color: var(--text-primary);
+}
+
+.dark .text-gray-800 {
+  color: var(--text-primary);
+}
+
+.dark .text-gray-700 {
+  color: var(--text-secondary);
+}
+
+.dark .text-gray-600 {
+  color: var(--text-secondary);
+}
+
+/* Colores de acento */
+.dark .bg-blue-50 { background-color: #1e40af; }
+.dark .bg-green-50 { background-color: #166534; }
+.dark .bg-red-50 { background-color: #991b1b; }
+.dark .bg-yellow-50 { background-color: #854d0e; }
+.dark .bg-purple-50 { background-color: #6b21a8; }
+.dark .bg-indigo-50 { background-color: #3730a3; }
+
+.dark .text-blue-800 { color: #93c5fd; }
+.dark .text-green-800 { color: #86efac; }
+.dark .text-red-800 { color: #fca5a5; }
+.dark .text-yellow-800 { color: #fde047; }
+.dark .text-purple-800 { color: #d8b4fe; }
+.dark .text-indigo-800 { color: #a5b4fc; }
+
+/* Bordes y sombras */
+.dark .border-gray-200 {
+  border-color: var(--border-color);
+}
+
+.dark .border-gray-300 {
+  border-color: var(--border-color);
+}
+
+.dark .shadow-md {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
 }

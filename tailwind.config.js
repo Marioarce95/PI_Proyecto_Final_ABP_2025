@@ -9,10 +9,25 @@ export default {
     extend: {
       colors: {
         dark: {
-          bg: '#1a1a1a',
+          bg: '#111827', // gray-900
           text: '#ffffff',
         }
-      }
+      },
+      backgroundColor: {
+        'light': {
+          'primary': '#ffffff',
+          'secondary': '#f3f4f6', // gray-100
+        }
+      },
+      animation: {
+        'fade-in': 'fadeIn 0.5s ease-in-out',
+      },
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+      },
     },
   },
   plugins: [],
