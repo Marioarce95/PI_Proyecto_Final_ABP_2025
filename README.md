@@ -1,7 +1,5 @@
 # Proyecto ABP
 
-## Evidencia 1
-
 ### Lista de Productos con React + Vite
 
 Este proyecto es una aplicación web que muestra una lista de productos consumiendo la API de DummyJSON. Está construido con React, Vite, Tailwind CSS y Axios.
@@ -51,8 +49,6 @@ npm install
 ```bash
 npm run dev
 ```
-
-# EVIDENCIA 2
 
 ## División de Componentes
 
