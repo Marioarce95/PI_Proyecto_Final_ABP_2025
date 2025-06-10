@@ -15,6 +15,10 @@ Este proyecto es una aplicación web que muestra una lista de productos consumie
 - [Tailwind CSS](https://tailwindcss.com/) - Framework de CSS utilitario
 - [Axios](https://axios-http.com/) - Cliente HTTP para realizar peticiones a la API
 - [DummyJSON](https://dummyjson.com/) - API de prueba para obtener datos de productos
+- [Recharts](https://recharts.org/) - Biblioteca de gráficos para React
+- [React-Toastify](https://fkhadra.github.io/react-toastify/) - Sistema de notificaciones
+- [XLSX](https://github.com/SheetJS/sheetjs) - Biblioteca para manejo de archivos Excel
+- [File-Saver](https://github.com/eligrey/FileSaver.js/) - Biblioteca para guardar archivos
 
 ### Requisitos Previos
 
@@ -34,7 +38,7 @@ git clone <https://github.com/Marioarce95/PI_Evidencias_2025.git>
 cd PI_Evidencias_2025
 ```
 
- ### Instala las dependencias:
+### Instala las dependencias:
 
 ```bash
 npm install
@@ -54,43 +58,81 @@ El proyecto se ha dividido en los siguientes componentes principales:
 
 1. **ProductList**: 
    - Encargado de mostrar la lista de productos
-   - Recibe los productos como prop
-   - Implementa diseño de tarjetas con Tailwind
-   - Incluye animaciones de hover y transiciones
+   - Implementa paginación y lazy loading
+   - Muestra 8 productos por página
+   - Incluye navegación y animaciones de carga
 
 2. **StatsPanel**: 
    - Muestra las estadísticas de los productos
-   - Recibe los productos filtrados como prop
    - Calcula y muestra estadísticas en tiempo real
-   - Diseño con tarjetas de diferentes colores para cada estadística
+   - Diseño con tarjetas de diferentes colores
 
-## Estadísticas Implementadas
+3. **SearchBar**:
+   - Componente para búsqueda y filtrado
+   - Filtrado por categoría
+   - Ordenamiento por precio y rating
+   - Soporte para modo oscuro
 
-Se han agregado las siguientes estadísticas:
+4. **ThemeToggle**:
+   - Botón flotante para cambiar entre modo claro y oscuro
+   - Iconos dinámicos según el modo
+   - Animaciones y transiciones suaves
 
-1. **Producto más caro**
-   - Muestra nombre y precio del producto más costoso
-   - Actualización dinámica según filtros
+5. **DetailedStats**:
+   - Estadísticas generales y por categoría
+   - Precios promedio, máximos y mínimos
+   - Rating promedio y análisis de stock
+   - Diseño responsive con grid
 
-2. **Producto más barato**
-   - Muestra nombre y precio del producto más económico
-   - Actualización dinámica según filtros
+6. **DataVisualizations**:
+   - Gráfico de barras para productos por categoría
+   - Gráfico de líneas para evolución de precios
+   - Gráfico circular para distribución de stock
+   - Tooltips interactivos y leyendas
 
-3. **Productos con título largo**
-   - Cuenta productos con títulos de más de 20 caracteres
-   - Útil para análisis de contenido
+7. **ExportTools**:
+   - Exportación a JSON, CSV y Excel
+   - Manejo de errores y notificaciones
+   - Interfaz intuitiva y responsive
 
-4. **Precio total**
-   - Suma total de precios de productos filtrados
-   - Actualización en tiempo real
+## Características Implementadas
 
-5. **Promedio de descuento**
-   - Calcula el descuento promedio de productos filtrados
-   - Expresado en porcentaje
+### Filtrado y Ordenamiento
+- Búsqueda por texto
+- Filtrado por categoría
+- Ordenamiento por precio y rating
+- Dirección de ordenamiento (ascendente/descendente)
 
-6. **Rating promedio** (Estadística adicional)
-   - Promedio de calificaciones de productos
-   - Indicador de satisfacción del cliente
+### Estadísticas
+- Precio promedio, máximo y mínimo
+- Rating promedio
+- Análisis de stock
+- Estadísticas por categoría
+- Productos destacados
+
+### Visualizaciones
+- Gráficos interactivos
+- Actualización dinámica
+- Soporte para modo oscuro
+- Diseño responsive
+
+### Exportación de Datos
+- Formato JSON
+- Formato CSV
+- Formato Excel
+- Notificaciones de éxito/error
+
+### Modo Oscuro
+- Cambio de tema persistente
+- Transiciones suaves
+- Adaptación de todos los componentes
+- Preferencias del sistema
+
+### Optimizaciones
+- Carga perezosa de productos
+- Paginación eficiente
+- Manejo de errores mejorado
+- Feedback visual constante
 
 ## Mejoras de Diseño
 
@@ -99,3 +141,6 @@ Se han agregado las siguientes estadísticas:
 - Tarjetas con sombras y bordes redondeados
 - Sección de estadísticas con fondos de colores distintivos
 - Diseño adaptable a diferentes tamaños de pantalla
+- Sistema de notificaciones integrado
+- Indicadores de carga y feedback visual
+- Jerarquía visual mejorada
