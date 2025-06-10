@@ -93,7 +93,7 @@ El proyecto se ha dividido en los siguientes componentes principales:
    - Manejo de errores y notificaciones
    - Interfaz intuitiva y responsive
 
-## Características Implementadas
+## Funciones Implementadas
 
 ### Filtrado y Ordenamiento
 - Búsqueda por texto
