@@ -29,7 +29,7 @@ Este proyecto es una aplicación web que muestra una lista de productos consumie
 
 Clona este repositorio o descárgalo:
 ```bash
-git clone <https://github.com/Marioarce95/PI_Evidencias_2025.git>
+https://github.com/Marioarce95/PI_Proyecto_Final_ABP_2025.git
 ```
 
 ### Navega al directorio del proyecto:
